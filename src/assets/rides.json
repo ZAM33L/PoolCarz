@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "startPoint": "Electronics City",
+    "endPoint": "Whitefield",
+    "seatsAvailable": 3
+  },
+  {
+    "id": 2,
+    "startPoint": "Hebbal",
+    "endPoint": "Koramangala",
+    "seatsAvailable": 2
+  },
+  {
+    "id": 3,
+    "startPoint": "Marathahalli",
+    "endPoint": "MG Road",
+    "seatsAvailable": 4
+  }
+]

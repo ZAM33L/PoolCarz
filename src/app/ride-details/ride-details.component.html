@@ -1,0 +1,28 @@
+<div class="card">
+        <h4>Ride Details</h4>
+        <table *ngIf="!bookingDone">
+          <thead>
+            <tr>
+              <th>Start Point</th>
+              <th>End Point</th>
+              <th>Seats Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ ride.startPoint }}</td>
+              <td>{{ ride.endPoint }}</td>
+              <td>{{ ride.seatsAvailable }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button *ngIf="!bookingDone" (click)="bookRide()">Book</button>
+      
+        <div *ngIf="bookingDone">
+          <p>Booking done. Your booking id - {{ bookingId }}</p>
+          <button (click)="cancelBookedRide()" style="background-color: red;">
+            Cancel Booked Ride
+          </button>
+        </div>
+      </div>
+      

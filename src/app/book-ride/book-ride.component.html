@@ -1,0 +1,165 @@
+<div class="book-ride">
+  <h2>Book a Ride</h2>
+  <div class="buttons">
+    <button (click)="filterRides('all')">Show All Rides</button>
+    <button (click)="filterRides('toOffice')">To Office</button>
+    <button (click)="filterRides('fromOffice')">From Office</button>
+    <button (click)="filterRides('others')">Others</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Start Point</th>
+        <th>End Point</th>
+        <th>Seats Available</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ride of filteredRides">
+        <td>{{ ride.startPoint }}</td>
+        <td>{{ ride.endPoint }}</td>
+        <td>{{ ride.seatsAvailable }}</td>
+        <td>
+          <button
+            [disabled]="ride.seatsAvailable === 0 || ride.owner === currentUser"
+            (click)="bookRide(ride)"
+          >
+            Ride!
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedRide">
+    <h4>Ride Details</h4>
+    <p>Id: {{ selectedRide.id }}</p>
+    <p>Name: {{ selectedRide.owner }}</p>
+    <p>Seats Left: {{ selectedRide.seatsAvailable }}</p>
+    <button (click)="cancelRide()">Cancel Booked Ride</button>
+  </div>
+
+  <div *ngIf="successMessage" class="success">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <button class="offer-ride-button" (click)="offerRide()">Offer a Ride</button>
+</div>
+
+
+<!--
+<div class="book-ride">
+  <h2>Book a Ride</h2>
+  <div class="buttons">
+    <button (click)="filterRides('all')">Show All Rides</button>
+    <button (click)="filterRides('toOffice')">To Office</button>
+    <button (click)="filterRides('fromOffice')">From Office</button>
+    <button (click)="filterRides('others')">Others</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Start Point</th>
+        <th>End Point</th>
+        <th>Seats Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ride of filteredRides">
+        <td>{{ ride.startPoint }}</td>
+        <td>{{ ride.endPoint }}</td>
+        <td>{{ ride.seatsAvailable }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="offer-ride-button">Offer a Ride</button>
+</div>
+-->
+
+<!--
+<div class="card">
+  <h4>Book a Ride</h4>
+  <p>
+    Pool Carz is an online application that enables users to share rides with others.
+    Check out the rides available and start pooling!
+  </p>
+  
+  <button (click)="showAllRides()">Show All Rides</button>
+  <button (click)="filterRides('To Office')">To Office</button>
+  <button (click)="filterRides('From Office')">From Office</button>
+  <button (click)="filterRides('Others')">Others</button>
+
+  <table *ngIf="!isRideBooked">
+    <thead>
+      <tr>
+        <th>Start Point</th>
+        <th>End Point</th>
+        <th>Seats Available</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ride of rides | rideFilter: filterBy">
+        <td>{{ ride.startPoint }}</td>
+        <td>{{ ride.endPoint }}</td>
+        <td>{{ ride.seatsAvailable }}</td>
+        <td>
+          <button (click)="selectRide(ride)">Select</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-ride-details
+    *ngIf="selectedRide"
+    [ride]="selectedRide"
+    (cancelRide)="handleCancelRide($event)"
+  ></app-ride-details>
+</div>
+-->
+
+<!--
+<div class="card">
+  <div class="card-header">
+    Book a Ride
+  </div>
+  <div class="card-body">
+    <p>
+      Pool Carz is an online application which enables users to share rides with others. You can
+      either book a ride or offer a ride. Did we mention that this app is advertisement free? To add
+      on top of that, it's free of cost! So what are you waiting for? Check out the rides available
+      and start PCing!!
+    </p>
+    <button (click)="toggleRides()" class="btn btn-primary">
+      {{ showRides ? 'Hide All Rides' : 'Show All Rides' }}
+    </button>
+    <button *ngIf="showRides" (click)="filterRides('toOffice')" class="btn btn-success">To Office</button>
+    <button *ngIf="showRides" (click)="filterRides('fromOffice')" class="btn btn-info">From Office</button>
+    <button *ngIf="showRides" (click)="filterRides('others')" class="btn btn-warning">Others</button>
+    <table *ngIf="showRides" class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Start Point</th>
+          <th>End Point</th>
+          <th>Seats Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ride of rides | rideFilter: currentFilter" appMouseHover>
+          <td>{{ ride.startPoint }}</td>
+          <td>{{ ride.endPoint }}</td>
+          <td>{{ ride.seatsAvailable }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-secondary mt-3">Offer A Ride!</button>
+  </div>
+</div>
+-->

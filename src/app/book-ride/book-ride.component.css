@@ -1,0 +1,125 @@
+/* Styling for the container */
+.container {
+  margin: 20px auto;
+  padding: 25px;
+  max-width: 900px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Styling for the filter buttons */
+.filter-buttons {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-buttons .btn {
+  margin: 8px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-buttons .btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Styling for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+table th,
+table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:hover {
+  background-color: #f1f5f8;
+}
+
+table th {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+table td {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling for "Offer Ride" button */
+.offer-ride-btn {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.offer-ride-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Improved accessibility for focus states */
+.btn:focus,
+.offer-ride-btn:focus {
+  outline: 3px solid rgba(0, 123, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .filter-buttons .btn {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 12px 10px;
+  }
+
+  .offer-ride-btn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
